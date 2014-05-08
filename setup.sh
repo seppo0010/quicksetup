@@ -26,16 +26,16 @@ popd
 
 cat >> ~/.vimrc <<EOF
 function! ThreeSpaces()
-    set expandtab▸  ▸   " Treat TAB as spacesa
-    set tabstop=3▸  ▸   " TAB is actually 3 spaces
-    set shiftwidth=3▸   " Doing >> on a block whill shift it one tab (based on ts setting above)
+    set expandtab       " Treat TAB as spacesa
+    set tabstop=3       " TAB is actually 3 spaces
+    set shiftwidth=3    " Doing >> on a block whill shift it one tab (based on ts setting above)
     set softtabstop=3   " makes the spaces feel like real tabs
 endfunction
 
 function! TwoSpaces()
-    set expandtab▸  ▸   " Treat TAB as spacesa
-    set tabstop=2▸  ▸   " TAB is actually 2 spaces
-    set shiftwidth=2▸   " Doing >> on a block whill shift it one tab (based on ts setting above)
+    set expandtab       " Treat TAB as spacesa
+    set tabstop=2       " TAB is actually 2 spaces
+    set shiftwidth=2    " Doing >> on a block whill shift it one tab (based on ts setting above)
     set softtabstop=2   " makes the spaces feel like real tabs
 endfunction
 
