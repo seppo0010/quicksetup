@@ -10,6 +10,11 @@ sudo chsh -s /bin/zsh `whoami`
 
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="tonotdo"/' ~/.zshrc
 
+touch ~/.ssh/known_hosts
+ssh-keyscan -t rsa,dsa github.com 2>&1 | sort -u - ~/.ssh/known_hosts > ~/.ssh/tmp_hosts
+cat ~/.ssh/tmp_hosts >> ~/.ssh/known_hosts
+rm ~/.ssh/tmp_hosts
+
 git clone https://github.com/mariano/dot-vim ~/.vim
 
 pushd ~/.vim
