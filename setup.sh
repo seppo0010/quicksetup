@@ -2,7 +2,8 @@
 
 sudo apt-get install -y vim zsh curl git-core
 
-echo "EDITOR=vim" >> ~/.bashrc
+echo "export EDITOR=vim" >> ~/.zshrc
+echo "set -o vi" >> ~/.zshrc
 
 curl -L http://install.ohmyz.sh | sh
 
