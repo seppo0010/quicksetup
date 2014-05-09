@@ -2,8 +2,12 @@
 
 sudo apt-get install -y vim zsh curl git-core
 
-echo "export EDITOR=vim" >> ~/.zshrc
-echo "set -o vi" >> ~/.zshrc
+cat >> ~/.zshrc <<EOF
+export EDITOR=vim
+set -o vi
+bindkey "^R" history-incremental-search-backward
+EOF
+
 
 curl -L http://install.ohmyz.sh | sh
 
