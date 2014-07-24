@@ -44,6 +44,7 @@ function! TwoSpaces()
 endfunction
 
 :call ThreeSpaces()
+:vmap u <Undo>
 EOF
 
 unlink ~/.vim/bundle/jslint
