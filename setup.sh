@@ -60,6 +60,6 @@ git config --global alias.fix "commit --amend -C HEAD"
 git config --global user.name "Sebastian Waisbrot"
 git config --global user.email "seppo0010@gmail.com"
 
-git config --global push.default simple
+git config --global push.default current
 
 echo ".*.swp" > ~/.gitignore_global
