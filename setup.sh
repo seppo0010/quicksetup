@@ -56,6 +56,7 @@ git config --global alias.st "status --short"
 git config --global alias.br branch
 git config --global core.excludesfile ~/.gitignore_global
 git config --global alias.fix "commit --amend -C HEAD"
+git config --global color.ui auto
 
 git config --global user.name "Sebastian Waisbrot"
 git config --global user.email "seppo0010@gmail.com"
