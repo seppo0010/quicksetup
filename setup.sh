@@ -3,16 +3,15 @@
 sudo apt-get update
 sudo apt-get install -y vim zsh curl git-core
 
+curl -L http://install.ohmyz.sh | sh
+
+sudo chsh -s /bin/zsh `whoami`
+
 cat >> ~/.zshrc <<EOF
 export EDITOR=vim
 set -o vi
 bindkey "^R" history-incremental-search-backward
 EOF
-
-
-curl -L http://install.ohmyz.sh | sh
-
-sudo chsh -s /bin/zsh `whoami`
 
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="tonotdo"/' ~/.zshrc
 
