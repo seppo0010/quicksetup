@@ -22,15 +22,12 @@ rm ~/.ssh/tmp_hosts
 
 git clone https://github.com/mariano/dot-vim ~/.vim
 
-pushd ~/.vim
+cd ~/.vim
 git rm -fr bundle-available/command-t
 git submodule update --init
 cd ..
-popd
 
-pushd ~
 ln -s .vim/.vimrc .vimrc
-popd
 
 cat >> ~/.vimrc <<EOF
 function! ThreeSpaces()
