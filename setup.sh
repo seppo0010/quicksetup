@@ -44,7 +44,6 @@ function! TwoSpaces()
     set softtabstop=2   " makes the spaces feel like real tabs
 endfunction
 
-:call ThreeSpaces()
 :vmap u <Undo>
 EOF
 
