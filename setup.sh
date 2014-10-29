@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 sudo apt-get update
-sudo apt-get install -y vim zsh curl git-core
+sudo apt-get install -y vim zsh curl git-core screen
 
 curl -L http://install.ohmyz.sh | sh
 
