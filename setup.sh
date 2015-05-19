@@ -45,6 +45,10 @@ function! TwoSpaces()
 endfunction
 
 :vmap u <Undo>
+
+"fix Vim's horribly broken default regex 'handling'
+nnoremap / /\v
+vnoremap / /\v
 EOF
 
 unlink ~/.vim/bundle/jslint
