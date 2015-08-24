@@ -11,6 +11,7 @@ cat >> ~/.zshrc <<EOF
 export EDITOR=vim
 set -o vi
 bindkey "^R" history-incremental-search-backward
+export PATH=\$PATH:\$HOME/.bin
 EOF
 
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="tonotdo"/' ~/.zshrc
@@ -67,3 +68,26 @@ git config --global user.email "seppo0010@gmail.com"
 git config --global push.default current
 
 echo ".*.swp" > ~/.gitignore_global
+
+mkdir ~/.bin
+pushd ~/.bin
+git clone https://github.com/brendangregg/FlameGraph.git
+cat >> flamegraph.sh <<EOF
+#!/bin/bash
+
+set -e
+
+if [ \$# -lt 2 ]; then
+    echo "Usage: \$(basename \$0) [name] [command]"
+    exit 2
+fi
+
+name=\$1
+shift
+
+# Record
+perf record -F 99 -g -- \$*
+perf script | ~/.bin/FlameGraph/stackcollapse-perf.pl |~/.bin/FlameGraph/flamegraph.pl \$folded > \${name}.svg
+EOF
+chmod a+x flamegraph.sh
+popd
