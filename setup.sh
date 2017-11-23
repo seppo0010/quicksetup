@@ -91,3 +91,10 @@ perf script | ~/.bin/FlameGraph/stackcollapse-perf.pl |~/.bin/FlameGraph/flamegr
 EOF
 chmod a+x flamegraph.sh
 popd
+
+cat >> .sqliterc <<EOF
+.headers on
+.mode column
+.nullvalue ¤
+.prompt "> "
+EOF
